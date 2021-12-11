@@ -24,6 +24,10 @@ allure {
 dependencies {
     testImplementation(
             "org.aspectj:aspectjweaver:1.9.6",
+            'commons-io:commons-io:2.11.0',
+            'org.junit.jupiter:junit-jupiter:5.8.1',
+            'io.qameta.allure:allure-selenide:2.17.0',
+            'com.codeborne:selenide:6.0.3',
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "com.github.javafaker:javafaker:1.0.2",

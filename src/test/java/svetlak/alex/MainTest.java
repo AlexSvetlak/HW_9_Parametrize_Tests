@@ -1,7 +1,6 @@
 package svetlak.alex;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Owner;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
@@ -43,7 +42,6 @@ public class MainTest {
     @ValueSource(strings = {"Codex: T’au Empire", "Codex: Chaos Knights"})
     @DisplayName("Search Chaos and Tau")
     @Tag("Catalog")
-    @ParameterizedTest(name = "Поиск {0} ")
     void searchCodex(String race) {
         open(URL);
         warHammerCatalogCheck.searchField.setValue(race);
@@ -58,7 +56,6 @@ public class MainTest {
             delimiter = '|')
     @DisplayName(" Search codex nd prices")
     @Tag("Catalog")
-    @ParameterizedTest(name = "Поиск кодексв {0} и проверка цены {1}")
     void searchCodex(String race, String price) {
         open(URL);
         warHammerCatalogCheck.searchField.setValue(race);

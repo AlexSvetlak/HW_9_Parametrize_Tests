@@ -2,6 +2,9 @@ package svetlak.alex;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Owner;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -11,9 +14,14 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 
 
 public class MainTest {
+    @BeforeAll
+    public static void setSelenideConfiguration() {
+        addListener("AllureSelenide", new AllureSelenide());
+    }
 
     WarHammerCatalogCheck warHammerCatalogCheck = new WarHammerCatalogCheck();
 
@@ -21,6 +29,7 @@ public class MainTest {
 
     public String race = "T'au codex";
 
+    @Owner("Alexandr Svetlakov")
     @DisplayName("Поиск кодекса Тау в каталоге")
     @Tag("Catalog")
     @Test
@@ -30,7 +39,7 @@ public class MainTest {
         warHammerCatalogCheck.searchButton.click();
         warHammerCatalogCheck.mainContent.shouldHave(Condition.text("Codex: T’au Empire"));
     }
-
+    @Owner("Alexandr Svetlakov")
     @ValueSource(strings = {"Codex: T’au Empire", "Codex: Chaos Knights"})
     @DisplayName("Поиск кодексов Тау и Хаоситов")
     @Tag("Catalog")
@@ -41,7 +50,7 @@ public class MainTest {
         warHammerCatalogCheck.searchButton.click();
         warHammerCatalogCheck.mainContent.shouldHave(Condition.text(race));
     }
-
+    @Owner("Alexandr Svetlakov")
     @CsvSource(value = {
             "Codex: T’au Empire| 25",
             "Codex: Chaos Knights| 25"
@@ -60,4 +69,6 @@ public class MainTest {
     }
 
 
+
 }
+

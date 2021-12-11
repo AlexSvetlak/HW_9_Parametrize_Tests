@@ -12,6 +12,7 @@ dependencies {
     testImplementation(
             'commons-io:commons-io:2.11.0',
             'org.junit.jupiter:junit-jupiter:5.8.1',
+            'io.qameta.allure:allure-selenide:2.14.0',
             'com.codeborne:selenide:6.0.3'
     )
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.8.1')

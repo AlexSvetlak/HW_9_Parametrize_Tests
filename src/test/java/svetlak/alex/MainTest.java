@@ -30,7 +30,7 @@ public class MainTest {
     public String race = "T'au codex";
 
     @Owner("Alexandr Svetlakov")
-    @DisplayName("Поиск кодекса Тау в каталоге")
+    @DisplayName("Search Tau")
     @Tag("Catalog")
     @Test
     void searchCodex() {
@@ -41,7 +41,7 @@ public class MainTest {
     }
     @Owner("Alexandr Svetlakov")
     @ValueSource(strings = {"Codex: T’au Empire", "Codex: Chaos Knights"})
-    @DisplayName("Поиск кодексов Тау и Хаоситов")
+    @DisplayName("Search Chaos and Tau")
     @Tag("Catalog")
     @ParameterizedTest(name = "Поиск {0} ")
     void searchCodex(String race) {
@@ -56,7 +56,7 @@ public class MainTest {
             "Codex: Chaos Knights| 25"
     },
             delimiter = '|')
-    @DisplayName(" Проверка кодексов и цен")
+    @DisplayName(" Search codex nd prices")
     @Tag("Catalog")
     @ParameterizedTest(name = "Поиск кодексв {0} и проверка цены {1}")
     void searchCodex(String race, String price) {

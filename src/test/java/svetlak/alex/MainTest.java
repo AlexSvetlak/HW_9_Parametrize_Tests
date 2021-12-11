@@ -22,9 +22,7 @@ public class MainTest {
     public static void setSelenideConfiguration() {
         addListener("AllureSelenide", new AllureSelenide());
     }
-        public void setupBrowser() {
-        Configuration.browser = "chrome";
-    }
+
 
     WarHammerCatalogCheck warHammerCatalogCheck = new WarHammerCatalogCheck();
 

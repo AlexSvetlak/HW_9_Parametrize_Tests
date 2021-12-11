@@ -1,6 +1,7 @@
 package svetlak.alex;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Owner;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
@@ -20,6 +21,9 @@ public class MainTest {
     @BeforeAll
     public static void setSelenideConfiguration() {
         addListener("AllureSelenide", new AllureSelenide());
+    }
+        public void setupBrowser() {
+        Configuration.browser = "chrome";
     }
 
     WarHammerCatalogCheck warHammerCatalogCheck = new WarHammerCatalogCheck();

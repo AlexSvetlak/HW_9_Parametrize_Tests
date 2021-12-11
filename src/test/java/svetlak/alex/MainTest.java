@@ -42,6 +42,7 @@ public class MainTest {
     @ValueSource(strings = {"Codex: T’au Empire", "Codex: Chaos Knights"})
     @DisplayName("Search Chaos and Tau")
     @Tag("Catalog")
+    @Test
     void searchCodex(String race) {
         open(URL);
         warHammerCatalogCheck.searchField.setValue(race);
@@ -56,6 +57,7 @@ public class MainTest {
             delimiter = '|')
     @DisplayName(" Search codex nd prices")
     @Tag("Catalog")
+    @Test
     void searchCodex(String race, String price) {
         open(URL);
         warHammerCatalogCheck.searchField.setValue(race);

@@ -1,7 +1,6 @@
 package svetlak.alex;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Owner;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
@@ -12,7 +11,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 
@@ -22,6 +20,7 @@ public class MainTest {
     public static void setSelenideConfiguration() {
         addListener("AllureSelenide", new AllureSelenide());
     }
+
 
 
     WarHammerCatalogCheck warHammerCatalogCheck = new WarHammerCatalogCheck();
